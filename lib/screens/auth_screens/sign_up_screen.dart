@@ -1,6 +1,8 @@
 import 'package:e_cart/utils/r_constant/r_color.dart';
 import 'package:e_cart/utils/r_constant/r_size.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'sign_in_screen.dart';
 
@@ -19,6 +21,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: RColor.appTextColor),
           title: const Text("Sign Up"),
         ),
         body: SingleChildScrollView(
@@ -29,109 +32,165 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               Text(
                 "Welcome to my app 🙏",
-                style: TextStyle(fontWeight: RSize.fBold, fontSize: RSize.fo16,color: RColor.primaryColor),
+                style: TextStyle(
+                    fontWeight: RSize.fBold,
+                    fontSize: RSize.fo18,
+                    color: RColor.primaryColor),
               ),
               const SizedBox(
                 height: 80,
               ),
               Padding(
-                padding:  const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration:  InputDecoration(
-                          prefixIcon: const Icon(Icons.email,color: Colors.grey,),
+                      cursorColor: RColor.primaryColor,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(
+                            Icons.email,
+                            color: Colors.grey,
+                          ),
                           hintText: 'Email',
                           labelText: 'Email',
-                          contentPadding: const EdgeInsets.only(top: 2,left: 5),
-                          hintStyle: TextStyle(color: Colors.grey,fontSize: RSize.fo16),
+                          labelStyle: const TextStyle(color: RColor.primaryColor),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: RColor.primaryColor,
+                              )),
+                          contentPadding:
+                              const EdgeInsets.only(top: 2, left: 5),
+                          hintStyle: TextStyle(
+                              color: Colors.grey, fontSize: RSize.fo16),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                               borderSide: const BorderSide(
                                 color: Colors.grey,
-                              )
-                          )
-                      ),
+                              ))),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
-                      decoration:  InputDecoration(
-                          prefixIcon: const Icon(Icons.person,color: Colors.grey,),
+                      cursorColor: RColor.primaryColor,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(
+                            Icons.person,
+                            color: Colors.grey,
+                          ),
                           hintText: 'UserName',
                           labelText: 'UserName',
-                          contentPadding: const EdgeInsets.only(top: 2,left: 5),
-                          hintStyle: TextStyle(color: Colors.grey,fontSize: RSize.fo16),
+                          contentPadding:
+                              const EdgeInsets.only(top: 2, left: 5),
+                          hintStyle: TextStyle(
+                              color: Colors.grey, fontSize: RSize.fo16),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                               borderSide: const BorderSide(
                                 color: Colors.grey,
-                              )
-                          )
+                              )),
+                        labelStyle: const TextStyle(color: RColor.primaryColor),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: RColor.primaryColor,
+                          )),
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
-                      decoration:  InputDecoration(
-                          prefixIcon: const Icon(Icons.phone,color: Colors.grey,),
+                      cursorColor: RColor.primaryColor,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(
+                            Icons.phone,
+                            color: Colors.grey,
+                          ),
                           hintText: 'Phone',
                           labelText: 'Phone',
-                          contentPadding: const EdgeInsets.only(top: 2,left: 5),
-                          hintStyle: TextStyle(color: Colors.grey,fontSize: RSize.fo16),
+                          contentPadding:
+                              const EdgeInsets.only(top: 2, left: 5),
+                          hintStyle: TextStyle(
+                              color: Colors.grey, fontSize: RSize.fo16),
+                          labelStyle: const TextStyle(color: RColor.primaryColor),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: RColor.primaryColor,
+                              )),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                               borderSide: const BorderSide(
                                 color: Colors.grey,
-                              )
-                          )
-                      ),
+                              ))),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
-                      decoration:  InputDecoration(
-                          prefixIcon: const Icon(Icons.location_on,color: Colors.grey,),
+                      cursorColor: RColor.primaryColor,
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(
+                            Icons.location_on,
+                            color: Colors.grey,
+                          ),
                           hintText: 'City',
                           labelText: 'City',
-                          contentPadding: const EdgeInsets.only(top: 2,left: 5),
-                          hintStyle: TextStyle(color: Colors.grey,fontSize: RSize.fo16),
+                          contentPadding:
+                              const EdgeInsets.only(top: 2, left: 5),
+                          hintStyle: TextStyle(
+                              color: Colors.grey, fontSize: RSize.fo16),
+                          labelStyle: const TextStyle(color: RColor.primaryColor),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: RColor.primaryColor,
+                              )),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                               borderSide: const BorderSide(
                                 color: Colors.grey,
-                              )
-                          )
-                      ),
+                              ))),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
+                      cursorColor: RColor.primaryColor,
                       obscureText: _isVisible,
-                      decoration:  InputDecoration(
-                          prefixIcon: const Icon(Icons.password,color: Colors.grey,),
+                      decoration: InputDecoration(
+                          prefixIcon: const Icon(
+                            Icons.password,
+                            color: Colors.grey,
+                          ),
                           suffixIcon: InkWell(
-                              onTap: (){
+                              onTap: () {
                                 setState(() {
                                   _isVisible = !_isVisible;
                                 });
                               },
-                              child: _isVisible ? const Icon(Icons.visibility_off) : const Icon(Icons.remove_red_eye)),
+                              child: _isVisible
+                                  ? const Icon(Icons.visibility_off)
+                                  : const Icon(Icons.remove_red_eye)),
                           hintText: 'Password',
                           labelText: 'Password',
-                          contentPadding: const EdgeInsets.only(top: 2,left: 5),
-                          hintStyle: TextStyle(color: Colors.grey,fontSize: RSize.fo16),
+                          contentPadding:
+                              const EdgeInsets.only(top: 2, left: 5),
+                          hintStyle: TextStyle(
+                              color: Colors.grey, fontSize: RSize.fo16),
+                          labelStyle: const TextStyle(color: RColor.primaryColor),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: RColor.primaryColor,
+                              )),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                               borderSide: const BorderSide(
                                 color: Colors.grey,
-                              )
-                          )
-                      ),
+                              ))),
                     ),
                     const SizedBox(
                       height: 60,
@@ -148,12 +207,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
-                    TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen(),));
-
-                    }, child: Text("Already have an account? Sign In",style: TextStyle(fontSize: RSize.fo14,color: RColor.primaryColor),)),
+                    RichText(
+                        text: TextSpan(
+                            text: "Already have an account? ",
+                            style: TextStyle(
+                                fontSize: RSize.fo14,
+                                color: RColor.primaryColor.withOpacity(.9)),
+                            children: [
+                              TextSpan(
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Get.to(()=>const SignInScreen());
+                                  },
+                                text: "Sign In",
+                                style: TextStyle(
+                                    fontSize: RSize.fo15,
+                                    fontWeight: RSize.fBold,
+                                    color: RColor.primaryColor),
+                              )
+                            ])),
                   ],
                 ),
               )

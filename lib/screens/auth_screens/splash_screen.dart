@@ -1,7 +1,8 @@
-import 'package:e_cart/screens/auth_screens/sign_up_screen.dart';
+import 'package:e_cart/controller/google_sign_in_controller.dart';
 import 'package:e_cart/utils/r_constant/r_color.dart';
 import 'package:e_cart/utils/r_constant/r_size.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'sign_in_screen.dart';
 
@@ -13,6 +14,8 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final GoogleSignInController googleSignInController =
+      Get.put(GoogleSignInController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,10 +50,10 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             ElevatedButton.icon(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen(),));
-
+                googleSignInController.handleGoogleBtnClick(context);
               },
               style: ElevatedButton.styleFrom(
+                  side: const BorderSide(color: RColor.borderColor),
                   backgroundColor: RColor.primaryColor,
                   fixedSize: const Size(270, 47)),
               icon: SizedBox(
@@ -68,10 +71,11 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             ElevatedButton.icon(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen(),));
+                Get.to(()=>const SignInScreen());
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: RColor.primaryColor,
+                  side: const BorderSide(color: RColor.borderColor),
                   fixedSize: const Size(270, 47)),
               icon: SizedBox(
                   width: 28,

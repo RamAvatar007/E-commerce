@@ -1,8 +1,11 @@
 import 'dart:ui';
 
 class RSize{
+  static double fo10 = 10.0;
+  static double fo11 = 11.0;
   static double fo12 = 12.0;
   static double fo14 = 14.0;
+  static double fo15 = 15.0;
   static double fo16 = 16.0;
   static double fo18 = 18.0;
   static double fo20 = 20.0;

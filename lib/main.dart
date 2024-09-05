@@ -1,5 +1,7 @@
 import 'package:e_cart/utils/r_constant/r_size.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'screens/auth_screens/splash_screen.dart';
 import 'utils/r_constant/r_color.dart';
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'E Cart',
       theme: ThemeData(
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
        )
       ),
       home: const SplashScreen(),
+      builder: EasyLoading.init(),
     );
   }
 }
